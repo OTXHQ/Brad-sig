@@ -1,16 +1,19 @@
 <!doctype html>
 <html lang="en">
+
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <title>Bradley Yandow Email Signature</title>
 
 <style>
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   padding: 24px;
-  background: #fff;
-  color: #111;
+  background: #ffffff;
+  color: #111111;
 }
 
 .preview img {
@@ -25,16 +28,17 @@ button {
   padding: 14px 22px;
   font-size: 17px;
   font-weight: 600;
-  border-radius: 10px;
   border: 0;
+  border-radius: 10px;
   background: #007aff;
-  color: white;
+  color: #ffffff;
 }
 
 #status {
   margin-top: 15px;
   font-size: 16px;
 }
+
 </style>
 </head>
 
@@ -54,19 +58,23 @@ button {
 <div id="status"></div>
 
 <script>
+
 async function copySignature() {
 
   const html = `
-    <img
-      src="https://otxhq.github.io/Brad-sig/bradley-signature.jpg"
-      width="500"
-      height="167"
-      alt="Bradley Yandow | Teejayo Solutions LLC"
-      style="display:block;border:0;width:500px;max-width:100%;height:auto;"
-    >
+    <div>
+      <span style="font-size:1px;line-height:1px;">&#8203;</span>
+      <img
+        src="https://otxhq.github.io/Brad-sig/bradley-signature.jpg"
+        width="500"
+        height="167"
+        alt="Bradley Yandow | Teejayo Solutions LLC"
+        style="display:block;border:0;width:500px;max-width:100%;height:auto;"
+      >
+    </div>
   `;
 
-  const plain = "Bradley Yandow | Teejayo Solutions LLC";
+  const plain = "\u200B";
 
   try {
 
@@ -88,7 +96,7 @@ async function copySignature() {
     await navigator.clipboard.write([item]);
 
     document.getElementById("status").innerText =
-      "✓ Signature copied. Open Settings → Apps → Mail → Signature and paste.";
+      "✓ Signature copied";
 
   } catch (error) {
 
@@ -96,7 +104,9 @@ async function copySignature() {
       "Copy failed: " + error;
 
   }
+
 }
+
 </script>
 
 </body>
