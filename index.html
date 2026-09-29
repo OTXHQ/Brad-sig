@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Bradley Yandow Email Signature</title>
+<title>Bradley Yandow Email Signature — Test 5</title>
 
 <style>
 body {
@@ -15,8 +15,19 @@ body {
   color: #111111;
 }
 
+.test {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.description {
+  margin-bottom: 24px;
+  color: #555555;
+}
+
 .preview img {
-  width: 500px;
+  width: 450px;
   max-width: 100%;
   height: auto;
   display: block;
@@ -42,11 +53,14 @@ button {
 
 <body>
 
-<h2>Bradley Yandow Email Signature</h2>
+<div class="test">TEST 5 — 450px</div>
+<div class="description">Hidden hyphen anchor</div>
 
 <div class="preview">
   <img
-    src="https://otxhq.github.io/Brad-sig/bradley-signature.jpg"
+    src="https://otxhq.github.io/Brad-sig/bradley-signature.jpg?v=5"
+    width="450"
+    height="150"
     alt="Bradley Yandow | Teejayo Solutions LLC"
   >
 </div>
@@ -69,14 +83,14 @@ async function copySignature() {
       ">-</div>
 
       <img
-        src="https://otxhq.github.io/Brad-sig/bradley-signature.jpg"
-        width="500"
-        height="167"
+        src="https://otxhq.github.io/Brad-sig/bradley-signature.jpg?v=5"
+        width="450"
+        height="150"
         alt="Bradley Yandow | Teejayo Solutions LLC"
         style="
           display:block;
           border:0;
-          width:500px;
+          width:450px;
           max-width:100%;
           height:auto;
           margin:0;
@@ -108,7 +122,7 @@ async function copySignature() {
     await navigator.clipboard.write([item]);
 
     document.getElementById("status").innerText =
-      "✓ Signature copied";
+      "✓ TEST 5 signature copied — 450px";
 
   } catch (error) {
 
