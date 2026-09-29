@@ -4,23 +4,100 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Bradley Yandow Email Signature</title>
+
+<style>
+body {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  padding: 24px;
+  background: #fff;
+  color: #111;
+}
+
+.preview img {
+  width: 500px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  margin-top: 24px;
+  padding: 14px 22px;
+  font-size: 17px;
+  font-weight: 600;
+  border-radius: 10px;
+  border: 0;
+  background: #007aff;
+  color: white;
+}
+
+#status {
+  margin-top: 15px;
+  font-size: 16px;
+}
+</style>
 </head>
 
-<body style="margin:20px; background:#ffffff;">
+<body>
 
-<div>
-  <div style="font-size:16px; margin-bottom:10px;">START</div>
+<h2>Bradley Yandow Email Signature</h2>
 
+<div class="preview">
   <img
     src="https://otxhq.github.io/Brad-sig/bradley-signature.jpg"
-    width="600"
-    height="200"
     alt="Bradley Yandow | Teejayo Solutions LLC"
-    style="display:block; border:0; max-width:100%; height:auto;"
   >
-
-  <div style="font-size:16px; margin-top:10px;">END</div>
 </div>
+
+<button onclick="copySignature()">Copy Signature</button>
+
+<div id="status"></div>
+
+<script>
+async function copySignature() {
+
+  const html = `
+    <img
+      src="https://otxhq.github.io/Brad-sig/bradley-signature.jpg"
+      width="500"
+      height="167"
+      alt="Bradley Yandow | Teejayo Solutions LLC"
+      style="display:block;border:0;width:500px;max-width:100%;height:auto;"
+    >
+  `;
+
+  const plain = "Bradley Yandow | Teejayo Solutions LLC";
+
+  try {
+
+    const htmlBlob = new Blob(
+      [html],
+      { type: "text/html" }
+    );
+
+    const textBlob = new Blob(
+      [plain],
+      { type: "text/plain" }
+    );
+
+    const item = new ClipboardItem({
+      "text/html": htmlBlob,
+      "text/plain": textBlob
+    });
+
+    await navigator.clipboard.write([item]);
+
+    document.getElementById("status").innerText =
+      "✓ Signature copied. Open Settings → Apps → Mail → Signature and paste.";
+
+  } catch (error) {
+
+    document.getElementById("status").innerText =
+      "Copy failed: " + error;
+
+  }
+}
+</script>
 
 </body>
 </html>
