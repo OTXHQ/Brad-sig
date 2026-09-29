@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Bradley Yandow Email Signature — Test 5</title>
+<title>Bradley Yandow Email Signature — V6</title>
 
 <style>
 body {
@@ -15,19 +15,18 @@ body {
   color: #111111;
 }
 
-.test {
-  font-size: 20px;
-  font-weight: 700;
+.version {
+  font-size: 32px;
+  font-weight: 800;
   margin-bottom: 8px;
 }
 
-.description {
-  margin-bottom: 24px;
-  color: #555555;
+h2 {
+  margin-top: 0;
 }
 
 .preview img {
-  width: 450px;
+  width: 320px;
   max-width: 100%;
   height: auto;
   display: block;
@@ -46,26 +45,30 @@ button {
 
 #status {
   margin-top: 15px;
-  font-size: 16px;
+  font-size: 17px;
+  font-weight: 600;
 }
 </style>
 </head>
 
 <body>
 
-<div class="test">TEST 5 — 450px</div>
-<div class="description">Hidden hyphen anchor</div>
+<div class="version">VERSION 6</div>
+
+<h2>Bradley Yandow Email Signature</h2>
 
 <div class="preview">
   <img
-    src="https://otxhq.github.io/Brad-sig/bradley-signature.jpg?v=5"
-    width="450"
-    height="150"
+    src="https://otxhq.github.io/Brad-sig/bradley-signature.jpg?v=6"
+    width="320"
+    height="107"
     alt="Bradley Yandow | Teejayo Solutions LLC"
   >
 </div>
 
-<button onclick="copySignature()">Copy Signature</button>
+<button onclick="copySignature()">
+  COPY SIGNATURE — V6
+</button>
 
 <div id="status"></div>
 
@@ -83,14 +86,14 @@ async function copySignature() {
       ">-</div>
 
       <img
-        src="https://otxhq.github.io/Brad-sig/bradley-signature.jpg?v=5"
-        width="450"
-        height="150"
+        src="https://otxhq.github.io/Brad-sig/bradley-signature.jpg?v=6"
+        width="320"
+        height="107"
         alt="Bradley Yandow | Teejayo Solutions LLC"
         style="
           display:block;
           border:0;
-          width:450px;
+          width:320px;
           max-width:100%;
           height:auto;
           margin:0;
@@ -122,12 +125,12 @@ async function copySignature() {
     await navigator.clipboard.write([item]);
 
     document.getElementById("status").innerText =
-      "✓ TEST 5 signature copied — 450px";
+      "✓ VERSION 6 COPIED";
 
   } catch (error) {
 
     document.getElementById("status").innerText =
-      "Copy failed: " + error;
+      "COPY FAILED: " + error;
 
   }
 }
