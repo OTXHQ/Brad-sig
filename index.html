@@ -15,7 +15,7 @@ body {
 
 .preview img {
   display: block;
-  width: 600px;
+  width: 400px;
   max-width: 100%;
   height: auto;
   border: 0;
@@ -41,8 +41,8 @@ button {
 
 <body>
 
-<h2>TEST 6 — 600px Responsive</h2>
-<p>600px desktop | constrained mobile | hidden hyphen anchor</p>
+<h2>TEST — 400px</h2>
+<p>400px | hidden hyphen anchor</p>
 
 <div class="preview">
   <img
@@ -64,9 +64,9 @@ async function copySignature() {
       <br>
       <img
         src="https://otxhq.github.io/Brad-sig/bradley-signature.jpg"
-        width="600"
+        width="400"
         alt="Bradley Yandow | Teejayo Solutions LLC"
-        style="display:block;width:600px;max-width:100%;height:auto;border:0;"
+        style="display:block;width:400px;max-width:100%;height:auto;border:0;"
       >
     </div>
   `;
@@ -93,7 +93,7 @@ async function copySignature() {
     await navigator.clipboard.write([item]);
 
     document.getElementById("status").innerText =
-      "✓ TEST 6 copied — 600px responsive with hidden anchor.";
+      "✓ 400px signature copied.";
 
   } catch (error) {
 
