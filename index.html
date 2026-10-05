@@ -15,7 +15,7 @@ body {
 
 .preview img {
   display: block;
-  width: 500px;
+  width: 600px;
   max-width: 100%;
   height: auto;
   border: 0;
@@ -41,8 +41,8 @@ button {
 
 <body>
 
-<h2>Bradley Yandow Email Signature</h2>
-<p>500px test | simple working structure | hidden anchor</p>
+<h2>TEST 6 — 600px Responsive</h2>
+<p>600px desktop | constrained mobile | hidden hyphen anchor</p>
 
 <div class="preview">
   <img
@@ -60,6 +60,52 @@ async function copySignature() {
 
   const html = `
     <div style="margin:0;padding:0;">
+      <span style="font-size:1px;line-height:1px;color:transparent;">-</span>
+      <br>
+      <img
+        src="https://otxhq.github.io/Brad-sig/bradley-signature.jpg"
+        width="600"
+        alt="Bradley Yandow | Teejayo Solutions LLC"
+        style="display:block;width:600px;max-width:100%;height:auto;border:0;"
+      >
+    </div>
+  `;
+
+  const plain = "-";
+
+  try {
+
+    const htmlBlob = new Blob(
+      [html],
+      { type: "text/html" }
+    );
+
+    const textBlob = new Blob(
+      [plain],
+      { type: "text/plain" }
+    );
+
+    const item = new ClipboardItem({
+      "text/html": htmlBlob,
+      "text/plain": textBlob
+    });
+
+    await navigator.clipboard.write([item]);
+
+    document.getElementById("status").innerText =
+      "✓ TEST 6 copied — 600px responsive with hidden anchor.";
+
+  } catch (error) {
+
+    document.getElementById("status").innerText =
+      "Copy failed: " + error;
+
+  }
+}
+</script>
+
+</body>
+</html>    <div style="margin:0;padding:0;">
       <span style="font-size:1px;line-height:1px;color:transparent;">-</span>
       <br>
       <img
