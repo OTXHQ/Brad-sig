@@ -13,9 +13,9 @@ body {
   color: #111111;
 }
 
-.preview img {
+.preview-image {
   display: block;
-  width: 400px;
+  width: 500px;
   max-width: 100%;
   height: auto;
   border: 0;
@@ -36,20 +36,25 @@ button {
   margin-top: 15px;
   font-size: 16px;
 }
+
+@media only screen and (max-width: 600px) {
+  .preview-image {
+    width: 375px !important;
+  }
+}
 </style>
 </head>
 
 <body>
 
-<h2>TEST — 400px</h2>
-<p>400px | hidden hyphen anchor</p>
+<h2>TEST — Adaptive Signature</h2>
+<p>500px desktop | 375px mobile | hidden hyphen anchor</p>
 
-<div class="preview">
-  <img
-    src="https://otxhq.github.io/Brad-sig/bradley-signature.jpg"
-    alt="Bradley Yandow | Teejayo Solutions LLC"
-  >
-</div>
+<img
+  class="preview-image"
+  src="https://otxhq.github.io/Brad-sig/bradley-signature.jpg"
+  alt="Bradley Yandow | Teejayo Solutions LLC"
+>
 
 <button onclick="copySignature()">Copy Signature</button>
 
@@ -59,14 +64,32 @@ button {
 async function copySignature() {
 
   const html = `
+    <style>
+      .bradley-signature-image {
+        display: block;
+        width: 500px;
+        max-width: 100%;
+        height: auto;
+        border: 0;
+      }
+
+      @media only screen and (max-width: 600px) {
+        .bradley-signature-image {
+          width: 375px !important;
+        }
+      }
+    </style>
+
     <div style="margin:0;padding:0;">
       <span style="font-size:1px;line-height:1px;color:transparent;">-</span>
       <br>
+
       <img
+        class="bradley-signature-image"
         src="https://otxhq.github.io/Brad-sig/bradley-signature.jpg"
-        width="400"
+        width="500"
         alt="Bradley Yandow | Teejayo Solutions LLC"
-        style="display:block;width:400px;max-width:100%;height:auto;border:0;"
+        style="display:block;width:500px;max-width:100%;height:auto;border:0;"
       >
     </div>
   `;
@@ -93,7 +116,7 @@ async function copySignature() {
     await navigator.clipboard.write([item]);
 
     document.getElementById("status").innerText =
-      "✓ 400px signature copied.";
+      "✓ Adaptive signature copied — 500px desktop / 375px mobile.";
 
   } catch (error) {
 
