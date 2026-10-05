@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <title>Bradley Yandow Email Signature</title>
 
 <style>
@@ -13,7 +14,7 @@ body {
   color: #111111;
 }
 
-.preview-image {
+.preview {
   display: block;
   width: 500px;
   max-width: 100%;
@@ -36,25 +37,22 @@ button {
   margin-top: 15px;
   font-size: 16px;
 }
-
-@media only screen and (max-width: 600px) {
-  .preview-image {
-    width: 375px !important;
-  }
-}
 </style>
 </head>
 
 <body>
 
-<h2>TEST — Adaptive Signature</h2>
-<p>500px desktop | 375px mobile | hidden hyphen anchor</p>
+<h2>TEST — Inline Responsive</h2>
+
+<p>500px desktop target | mobile constrained | hidden anchor</p>
 
 <img
-  class="preview-image"
+  class="preview"
   src="https://otxhq.github.io/Brad-sig/bradley-signature.jpg"
   alt="Bradley Yandow | Teejayo Solutions LLC"
 >
+
+<br>
 
 <button onclick="copySignature()">Copy Signature</button>
 
@@ -64,34 +62,40 @@ button {
 async function copySignature() {
 
   const html = `
-    <style>
-      .bradley-signature-image {
-        display: block;
-        width: 500px;
-        max-width: 100%;
-        height: auto;
-        border: 0;
-      }
+    <table
+      role="presentation"
+      cellpadding="0"
+      cellspacing="0"
+      border="0"
+      style="border-collapse:collapse;margin:0;padding:0;"
+    >
+      <tr>
+        <td style="margin:0;padding:0;">
 
-      @media only screen and (max-width: 600px) {
-        .bradley-signature-image {
-          width: 375px !important;
-        }
-      }
-    </style>
+          <span
+            style="font-size:1px;line-height:1px;color:transparent;"
+          >-</span>
 
-    <div style="margin:0;padding:0;">
-      <span style="font-size:1px;line-height:1px;color:transparent;">-</span>
-      <br>
+          <br>
 
-      <img
-        class="bradley-signature-image"
-        src="https://otxhq.github.io/Brad-sig/bradley-signature.jpg"
-        width="500"
-        alt="Bradley Yandow | Teejayo Solutions LLC"
-        style="display:block;width:500px;max-width:100%;height:auto;border:0;"
-      >
-    </div>
+          <img
+            src="https://otxhq.github.io/Brad-sig/bradley-signature.jpg"
+            width="500"
+            alt="Bradley Yandow | Teejayo Solutions LLC"
+            style="
+              display:block;
+              width:500px;
+              max-width:100%;
+              height:auto;
+              border:0;
+              margin:0;
+              padding:0;
+            "
+          >
+
+        </td>
+      </tr>
+    </table>
   `;
 
   const plain = "-";
@@ -116,7 +120,7 @@ async function copySignature() {
     await navigator.clipboard.write([item]);
 
     document.getElementById("status").innerText =
-      "✓ Adaptive signature copied — 500px desktop / 375px mobile.";
+      "✓ Inline-responsive signature copied.";
 
   } catch (error) {
 
